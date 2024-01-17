@@ -6,7 +6,8 @@
   <p>{{ message.split('').reverse().join('') }}</p> <!--也可以是复杂的表达式，建议在JavaScript中直接返回-->
   <p>{{ rawHtml }}</p> <!--v-pre指令，跳过这个元素和它的子元素的编译过程，直接显示-->
   <p v-html="rawHtml"></p> <!--v-html指令，内容按HTML格式输出-->
-  <p>二、属性绑定</p>
+  <h1>二、属性绑定</h1>
+  <p>下面是动态绑定的例子，这个`div`组件展示了如何进行元素的属性绑定，具体查看源代码</p>
   <div v-bind:id="appID" v-bind:class="dynamicClass">AppID</div> <!--绑定属性用“v-bind:”-->
 </template>
 
@@ -16,13 +17,13 @@
   font-size:20px;
   background-color:yellow;
   width:100px;
-  height:100px;
-  border:1px solid black;
+  height:70px;
+  border:1px solid #F0F8FF;
   margin:10px;
   padding:10px;
   display:inline-block;
   text-align:center;
-  line-height:100px;
+  line-height:45px;
   border-radius:10px;
   box-shadow: 0 0 10px #888;
   cursor:pointer;
