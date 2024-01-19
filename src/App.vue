@@ -6,9 +6,64 @@
   <p>{{ message.split('').reverse().join('') }}</p> <!--也可以是复杂的表达式，建议在JavaScript中直接返回-->
   <p>{{ rawHtml }}</p> <!--v-pre指令，跳过这个元素和它的子元素的编译过程，直接显示-->
   <p v-html="rawHtml"></p> <!--v-html指令，内容按HTML格式输出-->
-  <p>二、属性绑定</p>
+  <h1>二、属性绑定</h1>
   <div v-bind:id="appID" v-bind:class="dynamicClass">AppID</div> <!--绑定属性用“v-bind:”-->
+  <h1>事件绑定</h1>
+  <lay-button-container>
+      <lay-button type="primary" :loading="loadState" @click="loadStateClick">加载</lay-button>
+      <lay-button type="default" :loading="loadState" loadingIcon="layui-icon-loading">加载</lay-button>
+      <lay-switch v-model="loadState"></lay-switch>
+  </lay-button-container>
+  <lay-button type="default" @click="clickHandle">单击事件</lay-button>
+  <lay-button type="primary" @click="dblclickHandle">双击事件</lay-button>
+  <lay-button type="default" @click="mouseenterHandle">鼠标进入事件</lay-button>
+  <lay-button type="primary" @click="mouseleaveHandle">鼠标离开事件</lay-button>
+  <lay-button type="default" @click="mousemoveHandle">鼠标移动事件</lay-button>
+  <lay-button type="primary" @click="mouseoverHandle">鼠标悬停事件</lay-button>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      msg: 'Hello, Vue!',
+      number: 10,
+      ok: true,
+      message: '大家好啊',
+      rawHtml: '<span style="color:red">这里会显示红色</span>',
+      dynamicClass: 'active'
+    }
+  }
+}
+</script>
+
+<script setup>
+import { ref } from 'vue';
+
+const loadState = ref(true);
+
+const loadStateClick = () => {
+  alert("触发")
+}
+const clickHandle = () => {
+  console.log('点击事件')
+}
+const dblclickHandle = () => {
+  console.log('双击事件')
+}
+const mouseenterHandle = () => {
+  console.log('鼠标进入事件')
+}
+const mouseleaveHandle = () => {
+  console.log('鼠标离开事件')
+}
+const mousemoveHandle = () => {
+  console.log('鼠标移动事件')
+}
+const mouseoverHandle = () => {
+  console.log('鼠标悬停事件')
+}
+</script>
 
 <style>
 .active{
@@ -33,18 +88,3 @@
   transition:all 0.5s ease;
 }
 </style>
-
-<script>
-export default {
-  data() {
-    return {
-      msg: 'Hello, Vue!',
-      number: 10,
-      ok: true,
-      message: '大家好啊',
-      rawHtml: '<span style="color:red">这里会显示红色</span>',
-      dynamicClass: 'active'
-    }
-  }
-}
-</script>
