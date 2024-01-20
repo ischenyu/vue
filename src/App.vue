@@ -89,21 +89,3 @@ const mouseoverHandle = () => {
   transition:all 0.5s ease;
 }
 </style>
-<<<<<<< HEAD
-=======
-
-<script>
-export default {
-  data() {
-    return {
-      msg: 'Hello, Vue!',
-      number: 10,
-      ok: true,
-      message: '大家好啊',
-      rawHtml: '<span style="color:red">这里会显示红色</span>',
-      dynamicClass: 'active'
-    }
-  }
-}
-</script>
->>>>>>> d0fbd7d04b5fa61e5e923e92fcda2c054c81c0ca
