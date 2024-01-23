@@ -16,11 +16,6 @@
       <lay-switch v-model="loadState"></lay-switch>
   </lay-button-container>
   <lay-button type="default" @click="clickHandle">单击事件</lay-button>
-  <lay-button type="primary" @click="dblclickHandle">双击事件</lay-button>
-  <lay-button type="default" @click="mouseenterHandle">鼠标进入事件</lay-button>
-  <lay-button type="primary" @click="mouseleaveHandle">鼠标离开事件</lay-button>
-  <lay-button type="default" @click="mousemoveHandle">鼠标移动事件</lay-button>
-  <lay-button type="primary" @click="mouseoverHandle">鼠标悬停事件</lay-button>
 </template>
 
 <script>
@@ -47,22 +42,8 @@ const loadStateClick = () => {
   alert("触发")
 }
 const clickHandle = () => {
-  console.log('点击事件')
-}
-const dblclickHandle = () => {
-  console.log('双击事件')
-}
-const mouseenterHandle = () => {
-  console.log('鼠标进入事件')
-}
-const mouseleaveHandle = () => {
-  console.log('鼠标离开事件')
-}
-const mousemoveHandle = () => {
-  console.log('鼠标移动事件')
-}
-const mouseoverHandle = () => {
-  console.log('鼠标悬停事件')
+  console.log('点击事件');
+  alert("pressed");
 }
 </script>
 
