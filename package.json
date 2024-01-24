@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@layui/layui-vue": "^2.14.0",
-    "vue": "^3.3.11"
+    "vue": "^3.3.11",
+    "vue-form": "^4.10.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
