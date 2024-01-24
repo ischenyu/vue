@@ -1,4 +1,5 @@
 <template>
+  <layui-icon type="layui-icon-github" color="#009688"></layui-icon>
   <h1>一、模板语法</h1>
   <p class='p'>{{ msg }}</p> <!--模板语法，标签中的msg显示了return中的内容-->
   <p>{{ number +1 }}</p> <!--可以被求值的JavaScript代码也是可以放的，建议在JavaScript中直接返回-->
@@ -16,6 +17,8 @@
       <lay-switch v-model="loadState"></lay-switch>
   </lay-button-container>
   <lay-button type="default" @click="clickHandle">单击事件</lay-button>
+  <layui-icon class="upload-icon" type="layui-icon-upload" ></layui-icon>
+  <lay-button type="primary" @click="openNotifiy">通知</lay-button>
 </template>
 
 <script>
@@ -45,6 +48,13 @@ const clickHandle = () => {
   console.log('点击事件');
   alert("pressed");
 }
+const openNotifiy = function() {
+    layer.notifiy({
+      title:"标题",
+      content:"默认就是右上，也是用得最多的"
+    });
+    alert("message");
+}
 </script>
 
 <style>
@@ -69,4 +79,5 @@ const clickHandle = () => {
   left:0;
   transition:all 0.5s ease;
 }
+
 </style>
