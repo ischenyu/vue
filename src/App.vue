@@ -9,7 +9,7 @@
   <h1>二、属性绑定</h1>
   <p>下面是动态绑定的例子，这个`div`组件展示了如何进行元素的属性绑定，具体查看源代码</p>
   <div v-bind:id="appID" v-bind:class="dynamicClass">AppID</div> <!--绑定属性用“v-bind:”-->
-  <lay-button type="normal" :disabled="isbuttondisabled">Button</lay-button><!--布尔值Attribute-->
+  <lay-button type="normal" :disabled="isbuttondisabled" @click="buttonclick" class="buttonClass">Button</lay-button><!--布尔值Attribute-->
   <div v-bind="objectOfAttrs">div</div>
 </template>
 
@@ -31,6 +31,9 @@ export default {
       }
     }
   }
+}
+const buttonclick = function() {
+    layer.msg("成功消息", { time: 1000, icon: 1 })
 }
 </script>
 
@@ -56,11 +59,14 @@ export default {
   left:0;
   transition:all 0.5s ease;
 }
-
 .adiv{
   font-size:22px;
   color:green;
 
+}
+.buttonClass{
+   padding:5px;
+   transition:all 0.5s ease;
 }
 
 </style>
